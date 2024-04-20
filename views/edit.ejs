@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            background-color: rgb(237, 125, 162);
+        }
+        .content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 26px;
+        }
+        .main{
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 1px 1px 10px teal;
+            height: 200px;
+           
+        }
+        button{
+            margin-top: 30px;
+            border:none;
+            padding: 6px 8px 6px 8px;
+            color: rgb(255, 255, 255);
+            background-color: teal;
+            border-radius: 10%;
+            width: 60px;
+
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            
+        }
+
+
+       
+    </style>
+    <title>edit</title>
+</head>
+<body>
+    <div class="content">
+        <div class="head">
+        <h1>You are about to change your profile <span style="color: teal;">@<%= user.email %></span> </h1>
+    </div>
+    <div class="main">
+         <form method="post" action="/<%= user.id %>?_method=PATCH" name="form" >
+        <textarea name="username" id="name" cols="30" rows="2" ><%=user.username%></textarea>
+       <!-- <button id="name">speak</button> -->
+       <button>EDIT</button>
+     </form>
+    </div>
+     
+    </div>
+    
+    
+    
+</body> 
+</html>
