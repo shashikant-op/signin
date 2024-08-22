@@ -31,7 +31,7 @@
             padding-bottom:0;
             margin-top: 68px; 
             background-color: rgba(109, 226, 187, 0.992); 
-            margin-left: 130px;
+            margin-left: 10px;
            border-radius:  18% 18% 0 0   ;
            box-shadow: 0 0 25px 2px  rgba(109, 226, 187, 0.992);
            
@@ -49,7 +49,7 @@
         outline-style: none;
         }
         h2{
-            color: purple;
+            color:#ed5561;
             display: flex;
             
             margin-left: 30px;
@@ -62,27 +62,36 @@
             margin-left: 50px;
             padding-left: 80px;
         }
+        .pic2{
+            width: 40vw;
+            height: 40vw;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+        }
     </style>
 </head>
 <body>
     <div class="header"><h2> WELCOME IN Tech detector</h2></div>
-    <div class="content">
-        <div class="rightimg">
-            <img src="/img2.jpg " alt="img2">
-        </div>
+    <div class="container">
 <div class="main">
           <form method="post" action="/login/profile?_method=PATCH">
         <h3>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="gmail" placeholder="shashikant@gmail.com"></h3>
 <h3>password:&nbsp;<input type="password" name="userpassword" placeholder="3sgvhbaj"></h3>
 <div class="btn">
    <button>LOG-IN</button> 
+   </form>
 </div>
     </div>
+    <img class="pic2" src="https://www.nexuslab.net/heroImg/webdev.png" alt="img2">
     
 
 
 
-    </form>
+    
     </div>
   
     

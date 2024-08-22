@@ -17,7 +17,7 @@ const connection=mysql.createConnection(
         host:"localhost",
         user:"root",
         database:"app",
-        password:"Mysql12@"
+        password:"Mysql12"
 
     }
 );
@@ -89,6 +89,30 @@ app.patch("/login/profile",(req,res)=>{
   })
 
  })
+ app.patch("/login/profile",(req,res)=>{
+    let{gmail:usermail,userpassword:loginpassword}=req.body;
+    let q2=`select*from users where email="${usermail}" `;
+   
+    connection.query(q2,(err,result)=>{
+      
+    let user=result[0];
+       // cheking password 
+       
+       let rpassword=result[0].password;
+       console.log(rpassword);
+       console.log(loginpassword);
+                    if(rpassword===loginpassword){
+                        res.render("welcome.ejs",{user});
+                    }else{
+                        res.render("wrongpass.ejs");
+                    }
+       
+        console.log(user);
+       
+        
+  })
+
+ })
  
  //edit profile route
 
@@ -108,7 +132,7 @@ app.patch("/:id",(req,res)=>{
 
   let {id}=req.params;
   let {username:newusername}=req.body;
- let q1=`UPDATE users SET username="${newusername}" where id="${id}"`;
+ let q1=`UPDATE users SET name="${newusername}" where id="${id}"`;
  connection.query(q1,(err,result)=>{
     console.log(result);
     res.render("done.ejs");
