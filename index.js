@@ -89,31 +89,7 @@ app.patch("/login/profile",(req,res)=>{
   })
 
  })
- app.patch("/login/profile",(req,res)=>{
-    let{gmail:usermail,userpassword:loginpassword}=req.body;
-    let q2=`select*from users where email="${usermail}" `;
-   
-    connection.query(q2,(err,result)=>{
-      
-    let user=result[0];
-       // cheking password 
-       
-       let rpassword=result[0].password;
-       console.log(rpassword);
-       console.log(loginpassword);
-                    if(rpassword===loginpassword){
-                        res.render("welcome.ejs",{user});
-                    }else{
-                        res.render("wrongpass.ejs");
-                    }
-       
-        console.log(user);
-       
-        
-  })
 
- })
- 
  //edit profile route
 
 
